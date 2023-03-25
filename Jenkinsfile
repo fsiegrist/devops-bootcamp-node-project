@@ -3,12 +3,12 @@
 pipeline {
     agent any
     stages {
-        stage("Bump Version") {
+        stage('Bump Version') {
             steps {
                 script {
                     echo 'incrementing patch version...'
-                    dir("app") {
-                        npm version patch
+                    dir('app') {
+                        sh 'npm version patch'
 
                         def packageJson = readJSON file: 'package.json'
                         def version = packageJson.version
@@ -21,9 +21,9 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    dir("app") {
-                        sh "npm install"
-                        sh "npm run test"
+                    dir('app') {
+                        sh 'npm install'
+                        sh 'npm run test'
                     } 
                 }
             }
