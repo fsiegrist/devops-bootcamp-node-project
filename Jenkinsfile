@@ -44,7 +44,7 @@ pipeline {
                         sh 'git config user.email "jenkins@example.com"'
                         sh 'git config user.name "jenkins"'
 
-                        sh "git remote set-url origin https://${USER}:${PWD}@github.com/fsiegrist/devops-bootcamp-node-project.git"
+                        sh "git remote set-url origin https://${USERNAME}:${PASSWORD}@github.com/fsiegrist/devops-bootcamp-node-project.git"
                         sh 'git add app/package.json'
                         sh 'git commit -m "ci: version bump"'
                         sh 'git push origin HEAD:main'
