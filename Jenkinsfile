@@ -5,4 +5,13 @@ pipeline {
     tools {
         nodejs 'node-18'
     }
+    stages {
+        stage("Bump Version") {
+            steps {
+                script {
+                    echo 'incrementing patch version...'
+                }
+            }
+        }
+    }
 }
