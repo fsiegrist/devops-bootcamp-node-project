@@ -27,7 +27,7 @@ pipeline {
         stage('Commit Version Update') {
             steps {
                 script {
-                    commitAndPushVersionUpdate('github.com/fsiegrist/devops-bootcamp-node-project.git', 'GitHub')
+                    commitAndPushVersionUpdate('github.com/fsiegrist/devops-bootcamp-node-project.git', 'GitHub', 'shared-library')
                 }
             }
         }
