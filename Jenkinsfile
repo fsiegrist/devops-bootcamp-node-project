@@ -8,7 +8,7 @@ pipeline {
         stage('Bump Version') {
             steps {
                 script {
-                    bumpNpmVersion('app')
+                    bumpNpmVersion('app', 'patch')
                 }
             }
         }
