@@ -39,7 +39,7 @@ pipeline {
                 script {
                     echo 'deploying Docker image to EC2 server...'
                     
-                    def dockerComposeCmd = "IMAGE_TAG=${IMAGE_TAG} docker-compose up -d"
+                    def dockerComposeCmd = "IMAGE_TAG=${IMAGE_VERSION} docker-compose up -d"
                     def ec2Instance = "ec2-user@3.122.205.189"
 
                     sshagent(['ec2-server-key']) {
@@ -52,7 +52,7 @@ pipeline {
         stage('Commit Version Update') {
             steps {
                 script {
-                    commitAndPushVersionUpdate('github.com/fsiegrist/devops-bootcamp-node-project.git', 'GitHub')
+                    commitAndPushVersionUpdate('github.com/fsiegrist/devops-bootcamp-node-project.git', 'GitHub', 'main')
                 }
             }
         }
