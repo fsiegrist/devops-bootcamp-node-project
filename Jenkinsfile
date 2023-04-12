@@ -6,7 +6,7 @@ pipeline {
     agent any
 
     parameters {
-        boolenParam(name: 'deploy', defaultValue: false, description: 'Deploy the application on the EC2 server.') 
+        booleanParam(name: 'deploy', defaultValue: false, description: 'Deploy the application on the EC2 server.') 
     }
 
     stages {
