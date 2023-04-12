@@ -2,7 +2,7 @@
 ## Node Project
 <br />
 
-This project contains a node.js application used for the exercises in module 08 ("Build Automation & CI/CD with Jenkins") of Nana Janashia's [DevOps Bootcamp](https://www.techworld-with-nana.com/devops-bootcamp).
+This project contains a node.js application used for the exercises in module 08 ("Build Automation & CI/CD with Jenkins") and module 09 ("AWS Services") of Nana Janashia's [DevOps Bootcamp](https://www.techworld-with-nana.com/devops-bootcamp).
 
 ### Test
 The project uses jest library for tests. (see "test" script in package.json)
