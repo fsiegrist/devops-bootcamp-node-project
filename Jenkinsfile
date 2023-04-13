@@ -14,7 +14,7 @@ pipeline {
             // only execute this stage for the master/main branch
             when {
                 expression {
-                    return env.GIT_BRANCH == "main"
+                    return env.GIT_BRANCH == "origin/main"
                 }
             }
             steps {
@@ -35,7 +35,7 @@ pipeline {
             // only execute this stage for the master/main branch
             when {
                 expression {
-                    return env.GIT_BRANCH == "main"
+                    return env.GIT_BRANCH == "origin/main"
                 }
             }
             steps {
@@ -46,7 +46,7 @@ pipeline {
             // only execute this stage for the master/main branch and if the respective flag is set
             when {
                 expression {
-                    return env.GIT_BRANCH == "main" && params.deploy
+                    return env.GIT_BRANCH == "origin/main" && params.deploy
                 }
             }
             steps {
@@ -67,7 +67,7 @@ pipeline {
             // only execute this stage for the master/main branch
             when {
                 expression {
-                    return env.GIT_BRANCH == "main"
+                    return env.GIT_BRANCH == "origin/main"
                 }
             }
             steps {
