@@ -11,7 +11,7 @@ pipeline {
 
     stages {
         stage('Bump Version') {
-            // only execute this stage for the master/main branch
+            // only execute this stage for the main branch
             when {
                 expression {
                     return env.GIT_BRANCH == "origin/main"
@@ -32,7 +32,7 @@ pipeline {
             }
         }
         stage('Build and Push Docker Image') {
-            // only execute this stage for the master/main branch
+            // only execute this stage for the main branch
             when {
                 expression {
                     return env.GIT_BRANCH == "origin/main"
@@ -43,7 +43,7 @@ pipeline {
             }
         }
         stage('Deploy to EC2') {
-            // only execute this stage for the master/main branch and if the respective flag is set
+            // only execute this stage for the main branch and if the respective flag is set
             when {
                 expression {
                     return env.GIT_BRANCH == "origin/main" && params.deploy
@@ -64,7 +64,7 @@ pipeline {
             }
         }
         stage('Commit Version Update') {
-            // only execute this stage for the master/main branch
+            // only execute this stage for the main branch
             when {
                 expression {
                     return env.GIT_BRANCH == "origin/main"
